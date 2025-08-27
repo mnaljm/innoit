@@ -2,6 +2,9 @@
 // Usage: set environment variable DISCORD_WEBHOOK_URL to your Discord webhook URL
 // Then run: node server.js
 
+// Try to load a local .env (optional). If dotenv isn't installed, continue silently.
+try { require('dotenv').config(); } catch (e) {}
+
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
