@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Klagestation ❤️‍🔥</title>
+  <style>
+    :root{--bg:#f7f9fc;--card:#fff;--accent:#ff6b6b}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 60%);margin:0;padding:24px;display:flex;align-items:flex-start;justify-content:center;min-height:100vh}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(15,30,60,.08);width:100%;max-width:520px}
+    h1{margin:0 0 8px;font-size:24px}
+    p.lead{margin:0 0 18px;color:#334155}
+    .fun{font-size:40px}
+    label{display:block;margin:10px 0 6px;font-weight:600}
+    input[type=text],textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;background:#fbfdff}
+    textarea{min-height:110px;resize:vertical}
+    .row{display:flex;gap:8px}
+    .row > *{flex:1}
+    button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;margin-top:12px}
+    .small{font-size:13px;color:#64748b;margin-top:8px}
+    .success{display:none;padding:10px;margin-top:10px;border-radius:8px;background:#ecfdf5;color:#065f46}
+    .error{display:none;padding:10px;margin-top:10px;border-radius:8px;background:#fff1f2;color:#9f1239}
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <div class="fun">😤 ❤️‍🔥 😅</div>
+    <h1>Klagestation</h1>
+    <p class="lead">Har din kæreste fundet noget at brokke sig over? Lad hende klage her — på en kærlig måde. Du får besked med det samme.</p>
+
+    <form id="complaintForm">
+      <label for="name">Navn</label>
+      <input id="name" name="name" type="text" placeholder="F.eks. Marie" required>
+
+      <label for="category">Kategori</label>
+      <select id="category" name="category">
+        <option>Mad</option>
+        <option>Tøj</option>
+        <option>Opvask</option>
+        <option>Glemte løfter</option>
+        <option>Andet</option>
+      </select>
+
+      <label for="message">Klage</label>
+      <textarea id="message" name="message" placeholder="Skriv hvad der er sket..." required></textarea>
+
+      <div class="row">
+        <input id="notify" name="notify" type="text" placeholder="Tag (valgfrit) — f.eks. #vigtigt">
+        <button type="submit">Indsend klage</button>
+      </div>
+
+      <div class="small">Denne side sender en besked til din partner (server skal køres lokalt eller hostes). Se README for opsætning.</div>
+      <div class="success" id="success">Tak! Klagen er sendt 🌟</div>
+      <div class="error" id="error">Noget gik galt — prøv igen.</div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('complaintForm');
+    const successEl = document.getElementById('success');
+    const errorEl = document.getElementById('error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successEl.style.display = 'none';
+      errorEl.style.display = 'none';
+
+      const data = {
+        name: form.name.value.trim(),
+        category: form.category.value,
+        message: form.message.value.trim(),
+        tag: form.notify.value.trim(),
+        createdAt: new Date().toISOString()
+      };
+
+      try {
+        const res = await fetch('/complain', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          successEl.style.display = 'block';
+          form.message.value = '';
+          form.notify.value = '';
+          // small confetti + emoji celebration
+          document.querySelector('.fun').textContent = '🎉 Tak for din ærlige klage! ❤️';
+        } else {
+          const json = await res.json().catch(()=>({}));
+          errorEl.textContent = json?.error || 'Noget gik galt — prøv igen.';
+          errorEl.style.display = 'block';
+        }
+      } catch (err) {
+        console.error(err);
+        errorEl.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

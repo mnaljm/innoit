@@ -1,0 +1,10 @@
+{
+  "name": "complaints",
+  "version": "1.0.0",
+  "description": "Playful complaint station with Discord webhook notifications",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}
