@@ -17,7 +17,6 @@
     .row{display:flex;gap:8px}
     .row > *{flex:1}
     button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;margin-top:12px}
-    .small{font-size:13px;color:#64748b;margin-top:8px}
     .success{display:none;padding:10px;margin-top:10px;border-radius:8px;background:#ecfdf5;color:#065f46}
     .error{display:none;padding:10px;margin-top:10px;border-radius:8px;background:#fff1f2;color:#9f1239}
   </style>
@@ -26,11 +25,10 @@
   <div class="card" role="main">
     <div class="fun">😤 ❤️‍🔥 😅</div>
     <h1>Klagestation</h1>
-    <p class="lead">Har din kæreste fundet noget at brokke sig over? Lad hende klage her — på en kærlig måde. Du får besked med det samme.</p>
+    <p class="lead">Fie — hvis noget irriterer dig, så fortæl mig det her. Jeg får besked med det samme ❤️</p>
 
     <form id="complaintForm">
-      <label for="name">Navn</label>
-      <input id="name" name="name" type="text" placeholder="F.eks. Marie" required>
+      <!-- name input removed on purpose; name will be set to Fie automatically -->
 
       <label for="category">Kategori</label>
       <select id="category" name="category">
@@ -49,7 +47,7 @@
         <button type="submit">Indsend klage</button>
       </div>
 
-      <div class="small">Denne side sender en besked til din partner (server skal køres lokalt eller hostes). Se README for opsætning.</div>
+      <!-- explanatory text removed for a more personal UI -->
       <div class="success" id="success">Tak! Klagen er sendt 🌟</div>
       <div class="error" id="error">Noget gik galt — prøv igen.</div>
     </form>
@@ -59,14 +57,18 @@
     const form = document.getElementById('complaintForm');
     const successEl = document.getElementById('success');
     const errorEl = document.getElementById('error');
+    const DEFAULT_NAME = 'Fie';
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       successEl.style.display = 'none';
       errorEl.style.display = 'none';
 
+      const nameField = form.querySelector('[name="name"]');
+      const name = nameField ? (nameField.value.trim() || DEFAULT_NAME) : DEFAULT_NAME;
+
       const data = {
-        name: form.name.value.trim(),
+        name: name,
         category: form.category.value,
         message: form.message.value.trim(),
         tag: form.notify.value.trim(),
