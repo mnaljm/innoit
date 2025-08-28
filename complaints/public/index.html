@@ -87,10 +87,10 @@
           form.message.value = '';
           form.notify.value = '';
           // small confetti + emoji celebration
-          document.querySelector('.fun').textContent = '🎉 Tak for din ærlige klage! ❤️';
+          document.querySelector('.fun').textContent = ' Tak for din ærlige klage, den er logget og dokumenteret! ❤️';
         } else {
           const json = await res.json().catch(()=>({}));
-          errorEl.textContent = json?.error || 'Noget gik galt — prøv igen.';
+          errorEl.textContent = json?.error || 'Noget gik galt — skriv til din ynglingskæreste (håber det er mig).';
           errorEl.style.display = 'block';
         }
       } catch (err) {
