@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Hjælp – Innoit.dk</title>
+    <meta name="description" content="Få hjælp og support fra Innoit.dk. Find svar på ofte stillede spørgsmål, adgang til vores vidensbase og kontaktmuligheder for teknisk support.">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <!--#include virtual="/includes/header.html" -->
+
+    <main>
+        <section class="page-hero bg-primary">
+            <div class="container text-center text-white">
+                <h1>Support & Hjælp</h1>
+                <p class="lead">Vi er her for at sikre, at din IT altid kører problemfrit.</p>
+            </div>
+        </section>
+
+        <section class="support-options py-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="support-card shadow p-4 rounded h-100">
+                            <img src="/assets/images/icon-faq.svg" alt="FAQ ikon" class="mb-3">
+                            <h3>Ofte Stillede Spørgsmål (FAQ)</h3>
+                            <p>Find hurtige svar på de mest almindelige spørgsmål om vores services og IT-problemer.</p>
+                            <a href="#faq" class="btn btn-outline-primary">Se FAQ</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="support-card shadow p-4 rounded h-100">
+                            <img src="/assets/images/icon-knowledgebase.svg" alt="Vidensbase ikon" class="mb-3">
+                            <h3>Vidensbase</h3>
+                            <p>Dyk ned i vores omfattende artikler og guides for detaljerede løsninger og tips.</p>
+                            <a href="/support/knowledgebase.html" class="btn btn-outline-primary">Gå til Vidensbase</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="support-card shadow p-4 rounded h-100">
+                            <img src="/assets/images/icon-contact-support.svg" alt="Kontakt support ikon" class="mb-3">
+                            <h3>Kontakt Support</h3>
+                            <p>Har du brug for personlig assistance? Kontakt vores supportteam direkte.</p>
+                            <a href="/contact.html?subject=support" class="btn btn-outline-primary">Send en Supportforespørgsel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Ofte Stillede Spørgsmål</h2>
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Hvad er jeres typiske responstid for support?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Vores mål er at besvare alle supportforespørgsler inden for 4 arbejdstimer. For kritiske problemer har vi en hurtigere responstid, som defineres i vores serviceaftaler.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Kan I hjælpe med IT-problemer for private?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Ja, selvom vores primære fokus er på virksomheder, tilbyder vi også udvalgte IT-services til private, især inden for sikkerhed, netværksopsætning og generel teknisk rådgivning. Kontakt os for mere information.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Hvilke cloud-platforme understøtter I?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Vi har ekspertise inden for Microsoft Azure, Amazon Web Services (AWS) og Google Cloud Platform. Vi kan også hjælpe med hybrid-løsninger og on-premise integration.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tilføj flere FAQ-emner her -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Support / Contact CTA -->
+        <section class="cta-emergency-support text-center py-5">
+            <div class="container">
+                <h2>Akut IT-Problem?</h2>
+                <p>Hvis du oplever et kritisk IT-problem, ring til os med det samme for hurtig assistance.</p>
+                <a href="tel:+4512345678" class="btn btn-danger btn-lg"><i class="fas fa-phone-alt me-2"></i> Ring Til Akut Support</a>
+            </div>
+        </section>
+    </main>
+
+    <!--#include virtual="/includes/footer.html" -->
+
+    <script src="/assets/js/script.js"></script>
+    <!-- Bootstrap JS for accordion functionality (or custom JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome for icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>
