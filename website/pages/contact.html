@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt Innoit.dk – Book en Konsultation</title>
+    <meta name="description" content="Kontakt Innoit.dk for IT-rådgivning, support eller for at booke en gratis konsultation. Find vores kontaktoplysninger og åbningstider.">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <!--#include virtual="/includes/header.html" -->
+
+    <main>
+        <section class="page-hero bg-primary">
+            <div class="container text-center text-white">
+                <h1>Kontakt Os</h1>
+                <p class="lead">Vi er klar til at hjælpe dig med dine IT-behov.</p>
+            </div>
+        </section>
+
+        <section class="contact-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="contact-form-container shadow p-4 rounded">
+                            <h2>Send Os en Besked</h2>
+                            <form action="/submit-contact" method="POST" class="contact-form">
+                                <div class="form-group mb-3">
+                                    <label for="name" class="form-label">Dit Navn</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="email" class="form-label">Din Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="phone" class="form-label">Telefon (valgfrit)</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="subject" class="form-label">Emne</label>
+                                    <input type="text" class="form-control" id="subject" name="subject">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="message" class="form-label">Din Besked</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Send Besked</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="contact-info-container p-4 rounded bg-light shadow">
+                            <h2>Book en Gratis Konsultation</h2>
+                            <p>Ønsker du en uforpligtende snak om dine IT-behov? Brug vores online bookingsystem for at finde et tidspunkt, der passer dig.</p>
+                            <a href="[LINK_TIL_DIT_BOOKING_SYSTEM]" target="_blank" class="btn btn-secondary btn-lg w-100 mb-4" aria-label="Book tid online">Book Online Nu</a>
+
+                            <hr>
+
+                            <h2>Direkte Kontakt</h2>
+                            <address class="mb-4">
+                                <p><i class="fas fa-map-marker-alt me-2"></i> [Din Virksomheds Adresse]</p>
+                                <p><i class="fas fa-envelope me-2"></i> Email: <a href="mailto:info@innoit.dk">info@innoit.dk</a></p>
+                                <p><i class="fas fa-phone-alt me-2"></i> Telefon: <a href="tel:+4512345678">+45 12 34 56 78</a></p>
+                                <p><i class="fas fa-clock me-2"></i> Åbningstider: Man-Fre 9:00 - 17:00</p>
+                            </address>
+
+                            <h2>Find Os</h2>
+                            <!-- Placeholder for en indlejret Google Map eller lignende -->
+                            <div class="map-placeholder bg-white border rounded" style="height: 300px; width: 100%;">
+                                <!-- F.eks. <iframe src="GOOGLE_MAP_EMBED_URL" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+                                <p class="text-center text-muted p-5">Kort over lokation kommer her</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--#include virtual="/includes/footer.html" -->
+
+    <script src="/assets/js/script.js"></script>
+    <!-- Font Awesome for icons (optional, but good for contact page) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>
